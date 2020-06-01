@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+	<_name>Generate Android Phone Assets</_name>
+	<id>hacagusae.com.androidassets</id>
+	<dependency type="extension">org.inkscape.output.svg.inkscape</dependency>
+	<dependency type="executable" location="extensions">hacagusae_android_assets.py</dependency>
+    <param name="help" type="description">Generate android assets in PNG format of your whole project. It uses the label property for the output. The baseline is xxxhdpi.</param>
+	<effect needs-live-preview="false">
+        <object-type>all</object-type>
+        <effects-menu>
+                <submenu _name="APP assets"/>
+        </effects-menu>
+    </effect>
+	<script>
+		<command reldir="extensions" interpreter="python">hacagusae_android_assets.py</command>
+	</script>
+</inkscape-extension>

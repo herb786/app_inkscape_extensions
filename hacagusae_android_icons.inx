@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+	<_name>Generate Android Phone Icons</_name>
+	<id>hacagusae.com.androidicons</id>
+	<dependency type="extension">org.inkscape.output.svg.inkscape</dependency>
+	<dependency type="executable" location="extensions">hacagusae_android_icons.py</dependency>
+    <param name="help" type="description">Generate android icons in PNG format of your current layer. The baseline is xxxhdpi. It uses the generic name ic_launcher.png</param>
+	<effect needs-live-preview="false">
+        <object-type>all</object-type>
+        <effects-menu>
+                <submenu _name="APP assets"/>
+        </effects-menu>
+    </effect>
+	<script>
+		<command reldir="extensions" interpreter="python">hacagusae_android_icons.py</command>
+	</script>
+</inkscape-extension>
