@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 '''
-Copyright (C) 2020 Herbert Caller, kaioa.com
+Copyright (C) 2020 Herbert Caller,  hacagusae.appspot.com
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -103,17 +103,24 @@ class AndroidIconExport(inkex.EffectExtension):
 
     def getCurrentIcon(self):
         group = self.svg.selected
-        inkex.utils.debug(group)
+        #inkex.utils.debug(group)
         return group.popitem(last=False)[0]
 
     def effect(self):
         self.findCurrentWorkingDirectory()
+        inkex.utils.debug("Find id of selected group...")
         iconID = self.getCurrentIcon()
+        inkex.utils.debug("Export icon in PNG format and save in temp folder...")
         self.exportImageToPNG(iconID)
+        inkex.utils.debug("Create mdpi icon...")
         self.generateIconWithDPI(self.MDPI)
+        inkex.utils.debug("Create hdpi icon...")
         self.generateIconWithDPI(self.HDPI)
+        inkex.utils.debug("Create xhdpi icon...")
         self.generateIconWithDPI(self.XHDPI)
+        inkex.utils.debug("Create xxhdpi icon...")
         self.generateIconWithDPI(self.XXHDPI)
+        inkex.utils.debug("Create xxxhdpi icon...")
         self.generateIconWithDPI(self.XXXHDPI)
 
 if __name__ == '__main__':

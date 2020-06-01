@@ -4,7 +4,7 @@
 	<id>hacagusae.com.androidicons</id>
 	<dependency type="extension">org.inkscape.output.svg.inkscape</dependency>
 	<dependency type="executable" location="extensions">hacagusae_android_icons.py</dependency>
-    <param name="help" type="description">Generate android icons in PNG format of your current layer. The baseline is xxxhdpi. It uses the generic name ic_launcher.png</param>
+    <param name="help" type="description">\nGenerate android icons in PNG format of your current layer. The baseline is xxxhdpi. It uses the generic name ic_launcher.png\n</param>
 	<effect needs-live-preview="false">
         <object-type>all</object-type>
         <effects-menu>

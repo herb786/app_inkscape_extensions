@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 '''
-Copyright (C) 2020 Herbert Caller, kaioa.com
+Copyright (C) 2020 Herbert Caller, hacagusae.appspot.com
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -142,13 +142,21 @@ class AndroidAssetExport(inkex.EffectExtension):
 
     def effect(self):
         self.findCurrentWorkingDirectory()
+        inkex.utils.debug("Discover layers...")
         layers = self.getLayers()
+        inkex.utils.debug("Discover assets with labels...")
         assets = self.getAssetCollection(layers)
+        inkex.utils.debug("Create source PNG assets...")
         self.generateBaselinePNG(assets)
+        inkex.utils.debug("Create mdpi assets...")
         self.generateAssetsWithDPI(assets,self.MDPI)
+        inkex.utils.debug("Create hdpi assets...")
         self.generateAssetsWithDPI(assets,self.HDPI)
+        inkex.utils.debug("Create xhdpi assets...")
         self.generateAssetsWithDPI(assets,self.XHDPI)
+        inkex.utils.debug("Create xxhdpi assets...")
         self.generateAssetsWithDPI(assets,self.XXHDPI)
+        inkex.utils.debug("Create xxxhdpi assets...")
         self.generateAssetsWithDPI(assets,self.XXXHDPI)
 
 if __name__ == '__main__':
